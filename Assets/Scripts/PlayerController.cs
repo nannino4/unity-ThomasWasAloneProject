@@ -99,14 +99,9 @@ public class PlayerController : MonoBehaviour
 	void CheckGrounded()
 	{
 		// Check if the player is grounded
-		if (groundCollider.IsTouchingLayers(LayerMask.GetMask("Ground")))
+		if (groundCollider.IsTouchingLayers(LayerMask.GetMask("Ground", "Thomas", "John", "Claire")))
 		{
 			// Debug.Log(gameObject.name + " is grounded because it is touching the ground");
-			isGrounded = true;
-		}
-		else if (groundCollider.IsTouchingLayers(LayerMask.GetMask("Player")))
-		{
-			// Debug.Log(gameObject.name + " is grounded because it is touching another player");
 			isGrounded = true;
 		}
 		else
