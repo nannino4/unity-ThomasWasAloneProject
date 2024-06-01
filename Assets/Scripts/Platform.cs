@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Utils;
 
 public class Platform : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class Platform : MonoBehaviour
 		John,
 		Claire
 	}
+	// variable with the color 424BADFF
 	private BoxCollider2D boxCollider;
 	private SpriteRenderer spriteRenderer;
 	[SerializeField] private PlatformType platformType = PlatformType.White;
@@ -28,37 +30,22 @@ public class Platform : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        checkPlatformType();
+		if (Input.GetKeyDown(KeyCode.Alpha7))
+			changeType(PlatformType.Thomas, CharacterColor.ThomasColor, LayerMask.GetMask("John", "Claire"));
+		else if (Input.GetKeyDown(KeyCode.Alpha8))
+			changeType(PlatformType.John, CharacterColor.JohnColor, LayerMask.GetMask("Thomas", "Claire"));
+		else if (Input.GetKeyDown(KeyCode.Alpha9))
+			changeType(PlatformType.Claire, CharacterColor.ClaireColor, LayerMask.GetMask("Thomas", "John"));
+		else if (Input.GetKeyDown(KeyCode.Alpha0))
+			changeType(PlatformType.White, Color.white, LayerMask.GetMask());
+		else if (Input.GetKeyDown(KeyCode.Minus))
+			changeType(PlatformType.Inactive, Color.clear, LayerMask.GetMask("Thomas", "John", "Claire"));
     }
 
-	private void checkPlatformType()
+	private void changeType(PlatformType platformType, Color color, LayerMask layersToExclude)
 	{
-		switch (platformType)
-		{
-			case PlatformType.White:
-				boxCollider.excludeLayers = LayerMask.GetMask();
-				spriteRenderer.enabled = true;
-				spriteRenderer.color = Color.white;
-				break;
-			case PlatformType.Thomas:
-				boxCollider.excludeLayers = LayerMask.GetMask("Claire", "John");
-				spriteRenderer.enabled = true;
-				spriteRenderer.color = Color.red;
-				break;
-			case PlatformType.John:
-				boxCollider.excludeLayers = LayerMask.GetMask("Claire", "Thomas");
-				spriteRenderer.enabled = true;
-				spriteRenderer.color = Color.yellow;
-				break;
-			case PlatformType.Claire:
-				boxCollider.excludeLayers = LayerMask.GetMask("John", "Thomas");
-				spriteRenderer.enabled = true;
-				spriteRenderer.color = Color.blue;
-				break;
-			case PlatformType.Inactive:
-				boxCollider.excludeLayers = LayerMask.GetMask("Claire", "John", "Thomas");
-				spriteRenderer.enabled = false;
-				break;
-		}
+		this.platformType = platformType;
+		spriteRenderer.color = color;
+		boxCollider.excludeLayers = layersToExclude;
 	}
 }
