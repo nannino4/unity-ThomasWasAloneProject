@@ -19,11 +19,12 @@ public class LevelScript : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.R) || Input.GetKeyDown(KeyCode.Backspace))
 		{
-			UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
+			ResetLevel();
 		}
 		if (CheckGoals())
 		{
 			Debug.Log("All goals reached!");
+			LoadNextLevel();
 		}
 	}
 
@@ -37,5 +38,18 @@ public class LevelScript : MonoBehaviour
 			}
 		}
 		return true;
+	}
+
+	public void ResetLevel()
+	{
+		Debug.Log("Resetting level");
+		UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
+	}
+
+	public void LoadNextLevel()
+	{
+		//TODO
+		Debug.Log("Loading next level");
+		// UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex + 1);
 	}
 }
