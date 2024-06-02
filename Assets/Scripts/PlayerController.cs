@@ -56,6 +56,10 @@ public class PlayerController : MonoBehaviour
 		{
 			Move();
 		}
+		else if (isGrounded)
+		{
+			ApplyFriction();
+		}
 
 		// Limit the speed of the player
 		if (rb.velocity.magnitude > maxSpeed)
@@ -142,6 +146,12 @@ public class PlayerController : MonoBehaviour
 		float speedDifference = movementSpeed * movementInput - rb.velocity.x;
 		float acceleration = speedDifference * movementAcceleration;
 		rb.AddForce(acceleration * Vector2.right, 0);
+	}
+
+	void ApplyFriction()
+	{
+		// Apply friction to the player
+		rb.AddForce(-rb.velocity.x * movementAcceleration * Vector2.right, 0);
 	}
 
 	public bool IsActive()
