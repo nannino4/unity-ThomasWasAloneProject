@@ -221,8 +221,8 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
+  m_Interpolate: 1
+  m_SleepingMode: 0
   m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!114 &4265238617466862009
@@ -238,6 +238,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 5
+  movementAcceleration: 10
   maxSpeed: 5
   jumpForce: 5
   activationKey: 51
@@ -252,7 +253,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 8186114934508258615}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 00946c2a225d54da2a6ab58ca1e057f5, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0

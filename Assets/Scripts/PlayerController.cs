@@ -13,10 +13,11 @@ public enum ActivationKey
 public class PlayerController : MonoBehaviour
 {
 	// Public variables
-	public float movementSpeed = 10.0f;
-	public float maxSpeed = 10.0f;
-	public float jumpForce = 10.0f;
-	public ActivationKey activationKey = ActivationKey.Fire1;
+	[SerializeField] private float movementSpeed = 10.0f;
+	[SerializeField] private float movementAcceleration = 10.0f;
+	[SerializeField] private float maxSpeed = 40.0f;
+	[SerializeField] private float jumpForce = 10.0f;
+	[SerializeField] private ActivationKey activationKey = ActivationKey.Fire1;
 
 	// Private variables
 	[SerializeField] private bool isActive = false;
@@ -136,9 +137,11 @@ public class PlayerController : MonoBehaviour
 		// rb.velocity.Set(movementInput * movementSpeed, rb.velocity.y);
 		// rb.MovePosition(transform.position + movementVector * movementSpeed * Time.deltaTime);
 
-		transform.Translate(movementInput * movementSpeed * Time.fixedDeltaTime, 0, 0, Space.World);
+		// transform.Translate(movementInput * movementSpeed * Time.fixedDeltaTime, 0, 0, Space.World);
 
-		// rb.AddForce(new Vector2(movementInput * movementSpeed, 0));
+		float speedDifference = movementSpeed * movementInput - rb.velocity.x;
+		float acceleration = speedDifference * movementAcceleration;
+		rb.AddForce(acceleration * Vector2.right, 0);
 	}
 
 	public bool IsActive()
