@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Button : MonoBehaviour
 {
+	public UnityEvent onButtonPressed;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,4 +17,9 @@ public class Button : MonoBehaviour
     {
         
     }
+
+	void OnTriggerEnter2D(Collider2D other)
+	{
+		onButtonPressed.Invoke();
+	}
 }

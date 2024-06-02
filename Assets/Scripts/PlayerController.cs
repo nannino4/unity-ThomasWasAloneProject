@@ -135,7 +135,10 @@ public class PlayerController : MonoBehaviour
 		// Vector3 movementVector = new Vector3(movementInput, rb.velocity.y, 0);
 		// rb.velocity.Set(movementInput * movementSpeed, rb.velocity.y);
 		// rb.MovePosition(transform.position + movementVector * movementSpeed * Time.deltaTime);
+
 		transform.Translate(movementInput * movementSpeed * Time.fixedDeltaTime, 0, 0, Space.World);
+
+		// rb.AddForce(new Vector2(movementInput * movementSpeed, 0));
 	}
 
 	public bool IsActive()
