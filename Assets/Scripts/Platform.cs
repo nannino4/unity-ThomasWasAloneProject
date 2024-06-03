@@ -16,6 +16,7 @@ public class Platform : MonoBehaviour
 	private BoxCollider2D boxCollider;
 	private SpriteRenderer spriteRenderer;
 	[SerializeField] private PlatformType platformType = PlatformType.White;
+	// region: platform movement
 	[SerializeField] private Vector3 initialPosition;
 	[SerializeField] private Vector3 deltaPosition = new Vector3(0.0f, 0.0f, 0.0f);
 	[SerializeField] private float timeElapsed = 0.0f;
@@ -74,6 +75,11 @@ public class Platform : MonoBehaviour
 	public void StartMoving()
 	{
 		isMoving = true;
+	}
+
+	public void StopMoving()
+	{
+		isMoving = false;
 	}
 
 	// private void changeType(PlatformType platformType, Color color, LayerMask layersToExclude)
