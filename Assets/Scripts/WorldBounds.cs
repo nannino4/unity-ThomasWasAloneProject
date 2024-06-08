@@ -25,5 +25,6 @@ public class WorldBound : MonoBehaviour
 		{
 			onPlayerExit.Invoke();
 		}
+		Destroy(other.gameObject);
 	}
 }

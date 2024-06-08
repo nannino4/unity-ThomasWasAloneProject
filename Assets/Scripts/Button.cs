@@ -23,7 +23,7 @@ public class Button : MonoBehaviour
 	{
 		if (other.gameObject.tag == "Player")
 		{
-			Debug.Log("Button pressed");
+			// Debug.Log("Button pressed");
 			// scale object to indicate button press
 			transform.localScale.Set(1f, 0.1f, 1f);
 			// call the onButtonPressed event
@@ -35,7 +35,7 @@ public class Button : MonoBehaviour
 	{
 		if (other.gameObject.tag == "Player")
 		{
-			Debug.Log("Button released");
+			// Debug.Log("Button released");
 			transform.localScale.Set(1f, 1f, 1f);
 			onButtonReleased.Invoke();
 		}
