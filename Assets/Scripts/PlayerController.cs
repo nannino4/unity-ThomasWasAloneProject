@@ -82,9 +82,7 @@ public class PlayerController : MonoBehaviour
 					// the character is active
 					if (!isActive)
 					{
-						isActive = true;
-						// Make the 'active character pointer' visible
-						transform.Find("Pointer").gameObject.GetComponent<SpriteRenderer>().enabled = true;
+						SetActive();
 					}
 				}
 				else
@@ -92,13 +90,25 @@ public class PlayerController : MonoBehaviour
 					// another character is active, and the current character is not active
 					if (isActive)
 					{
-						isActive = false;
-						// Make the 'active character pointer' invisible
-						transform.Find("Pointer").gameObject.GetComponent<SpriteRenderer>().enabled = false;
+						SetNotActive();
 					}
 				}
 			}
 		}
+	}
+
+	public void SetActive()
+	{
+		isActive = true;
+		// Make the 'active character pointer' visible
+		transform.Find("Pointer").gameObject.GetComponent<SpriteRenderer>().enabled = true;
+	}
+
+	public void SetNotActive()
+	{
+		isActive = false;
+		// Make the 'active character pointer' invisible
+		transform.Find("Pointer").gameObject.GetComponent<SpriteRenderer>().enabled = false;
 	}
 
 	void CheckGrounded()

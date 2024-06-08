@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Hole : MonoBehaviour
 {
@@ -15,4 +16,12 @@ public class Hole : MonoBehaviour
     {
         
     }
+
+	private void OnTriggerEnter2D(Collider2D other)
+	{
+		if (other.gameObject.CompareTag("Player"))
+		{
+			other.gameObject.GetComponent<PlayerController>().SetNotActive();
+		}
+	}
 }

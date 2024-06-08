@@ -20,6 +20,7 @@ public class CameraController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+		activePlayer = null;
         foreach (GameObject player in players)
 		{
 			if (player.GetComponent<PlayerController>().IsActive())
