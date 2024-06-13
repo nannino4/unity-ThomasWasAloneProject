@@ -23,6 +23,7 @@ public class WorldBound : MonoBehaviour
 	{
 		if (other.gameObject.CompareTag("Player"))
 		{
+			Debug.Log("Player exited the world bounds!");
 			onPlayerExit.Invoke();
 		}
 		Destroy(other.gameObject);

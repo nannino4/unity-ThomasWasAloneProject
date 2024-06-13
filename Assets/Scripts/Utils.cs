@@ -8,4 +8,14 @@ namespace Utils
 		public static Color JohnColor = new Color(0.8196079f, 0.7137255f, 0);
 		public static Color ClaireColor = new Color(0.259523f, 0.2940988f, 0.6792453f);
 	}
+
+
+	public enum WorldObjectType
+	{
+		Inactive,
+		White,
+		Thomas,
+		John,
+		Claire
+	}
 }

@@ -36,8 +36,6 @@ public class PlayerController : MonoBehaviour
 		groundCollider = transform.Find("Square").gameObject.GetComponent<BoxCollider2D>();
 		if (groundCollider == null)
 			Debug.LogError("Ground collider not found on the player object");
-		else if (groundCollider.isTrigger == false)
-			Debug.LogError("Ground collider is not a trigger");
     }
 
     // Update is called once per frame

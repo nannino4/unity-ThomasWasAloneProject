@@ -5,23 +5,23 @@ using Utils;
 
 public class Platform : MonoBehaviour
 {
-	private enum PlatformType
-	{
-		Inactive,
-		White,
-		Thomas,
-		John,
-		Claire
-	}
+	////////// private attributes
+	# region references
 	private BoxCollider2D boxCollider;
 	private SpriteRenderer spriteRenderer;
-	[SerializeField] private PlatformType platformType = PlatformType.White;
-	// region: platform movement
+	# endregion
+
+	# region platform type
+	[SerializeField] private WorldObjectType platformType = WorldObjectType.White;
+	# endregion
+
+	# region platform movement
 	[SerializeField] private Vector3 initialPosition;
 	[SerializeField] private Vector3 deltaPosition = new Vector3(0.0f, 0.0f, 0.0f);
 	[SerializeField] private float timeElapsed = 0.0f;
 	[SerializeField] private float timePeriod = 1.0f;
 	[SerializeField] private bool isMoving = false;
+	# endregion
 
     // Start is called before the first frame update
     void Start()
@@ -34,19 +34,19 @@ public class Platform : MonoBehaviour
 		initialPosition = transform.position;
 		switch (platformType)
 		{
-			case PlatformType.Thomas:
+			case WorldObjectType.Thomas:
 				ChangeTypeThomas();
 				break;
-			case PlatformType.John:
+			case WorldObjectType.John:
 				ChangeTypeJohn();
 				break;
-			case PlatformType.Claire:
+			case WorldObjectType.Claire:
 				ChangeTypeClaire();
 				break;
-			case PlatformType.White:
+			case WorldObjectType.White:
 				ChangeTypeWhite();
 				break;
-			case PlatformType.Inactive:
+			case WorldObjectType.Inactive:
 				ChangeTypeInactive();
 				break;
 		}
@@ -91,35 +91,35 @@ public class Platform : MonoBehaviour
 
 	public void ChangeTypeThomas()
 	{
-		platformType = PlatformType.Thomas;
+		platformType = WorldObjectType.Thomas;
 		spriteRenderer.color = CharacterColor.ThomasColor;
 		boxCollider.excludeLayers = LayerMask.GetMask("John", "Claire");
 	}
 
 	public void ChangeTypeJohn()
 	{
-		platformType = PlatformType.John;
+		platformType = WorldObjectType.John;
 		spriteRenderer.color = CharacterColor.JohnColor;
 		boxCollider.excludeLayers = LayerMask.GetMask("Thomas", "Claire");
 	}
 
 	public void ChangeTypeClaire()
 	{
-		platformType = PlatformType.Claire;
+		platformType = WorldObjectType.Claire;
 		spriteRenderer.color = CharacterColor.ClaireColor;
 		boxCollider.excludeLayers = LayerMask.GetMask("Thomas", "John");
 	}
 
 	public void ChangeTypeWhite()
 	{
-		platformType = PlatformType.White;
+		platformType = WorldObjectType.White;
 		spriteRenderer.color = Color.white;
 		boxCollider.excludeLayers = LayerMask.GetMask();
 	}
 
 	public void ChangeTypeInactive()
 	{
-		platformType = PlatformType.Inactive;
+		platformType = WorldObjectType.Inactive;
 		spriteRenderer.color = Color.clear;
 		boxCollider.excludeLayers = LayerMask.GetMask("Thomas", "John", "Claire");
 	}
