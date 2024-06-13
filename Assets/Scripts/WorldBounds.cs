@@ -5,12 +5,13 @@ using UnityEngine.Events;
 
 public class WorldBound : MonoBehaviour
 {
+	private LevelScript levelScript;
 	[SerializeField] private UnityEvent onPlayerExit;
 
 	// Start is called before the first frame update
 	void Start()
 	{
-
+		levelScript = GameObject.Find("LevelObject").GetComponent<LevelScript>();
 	}
 
 	// Update is called once per frame
@@ -19,12 +20,12 @@ public class WorldBound : MonoBehaviour
 
 	}
 
-	void OnTriggerExit2D(Collider2D other)
+	void OnTriggerEnter2D(Collider2D other)
 	{
 		if (other.gameObject.CompareTag("Player"))
 		{
 			Debug.Log("Player exited the world bounds!");
-			onPlayerExit.Invoke();
+			levelScript.ResetLevel();
 		}
 		Destroy(other.gameObject);
 	}

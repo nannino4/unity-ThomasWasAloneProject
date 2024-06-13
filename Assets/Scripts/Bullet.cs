@@ -37,7 +37,7 @@ public class Bullet : MonoBehaviour
 
 	void OnCollisionEnter2D(Collision2D other)
 	{
-		if (other.gameObject.tag == "Player" && other.gameObject.name == bulletType.ToString())
+		if (other.gameObject.tag == "Player" && (other.gameObject.name == bulletType.ToString() || bulletType == WorldObjectType.White))
 		{
 			Debug.Log("Player hit by bullet! GAME OVER!");
 			levelScript.ResetLevel();

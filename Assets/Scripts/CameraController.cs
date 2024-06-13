@@ -23,7 +23,7 @@ public class CameraController : MonoBehaviour
 		activePlayer = null;
         foreach (GameObject player in players)
 		{
-			if (player.GetComponent<PlayerController>().IsActive())
+			if (player && player.GetComponent<PlayerController>().IsActive())
 			{
 				activePlayer = player;
 				break;

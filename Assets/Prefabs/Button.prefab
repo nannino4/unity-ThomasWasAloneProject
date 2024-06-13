@@ -52,6 +52,8 @@ MonoBehaviour:
   onButtonReleased:
     m_PersistentCalls:
       m_Calls: []
+  isToggle: 0
+  buttonType: 1
 --- !u!61 &343593043661918042
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -108,7 +110,7 @@ GameObject:
   - component: {fileID: 3077921748228615647}
   - component: {fileID: 1309786283371877615}
   m_Layer: 0
-  m_Name: Square
+  m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
