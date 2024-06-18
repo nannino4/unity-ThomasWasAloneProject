@@ -170,7 +170,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8186114934508258615, guid: 9f8e334f558604130aaccc1f455e691a, type: 3}
       propertyPath: m_Name
-      value: Thomas Variant
+      value: Thomas
       objectReference: {fileID: 0}
     - target: {fileID: 8186114934508258615, guid: 9f8e334f558604130aaccc1f455e691a, type: 3}
       propertyPath: m_Layer

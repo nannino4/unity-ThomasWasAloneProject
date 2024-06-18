@@ -5,34 +5,24 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
 	// Public variables
-	public GameObject[] players;
-
-	// Private variables
-	private GameObject activePlayer;
+	public GameObject target;
 
     // Start is called before the first frame update
     void Start()
-    {
-        if (players.Length == 0)
-			Debug.LogError("No players assigned to the camera controller");
-    }
+    {}
 
     // Update is called once per frame
     void Update()
     {
-		activePlayer = null;
-        foreach (GameObject player in players)
+		if (target != null)
 		{
-			if (player && player.GetComponent<PlayerController>().IsActive())
-			{
-				activePlayer = player;
-				break;
-			}
-		}
-
-		if (activePlayer != null)
-		{
-			transform.position = new Vector3(activePlayer.transform.position.x, activePlayer.transform.position.y, transform.position.z);
+			transform.position = new Vector3(target.transform.position.x, target.transform.position.y, transform.position.z);
 		}
     }
+
+	// Set the target of the camera
+	public void SetTarget(GameObject newTarget)
+	{
+		target = newTarget;
+	}
 }

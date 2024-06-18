@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,22 +14,35 @@ public enum ActivationKey
 public class PlayerController : MonoBehaviour
 {
 	// Public variables
+	# region movement
 	[SerializeField] private float movementSpeed = 10.0f;
 	[SerializeField] private float movementAcceleration = 10.0f;
+	[SerializeField] private float movementDeceleration = 30.0f;
 	[SerializeField] private float maxSpeed = 40.0f;
 	[SerializeField] private float jumpForce = 10.0f;
+	# endregion
+
+	# region properties
 	[SerializeField] private ActivationKey activationKey = ActivationKey.Fire1;
+	# endregion
 
 	// Private variables
+	# region state
 	[SerializeField] private bool isActive = false;
 	[SerializeField] private bool isGrounded = false;
+	private bool hasJumped = false;
+	# endregion
+
+	# region references
 	private Rigidbody2D rb;
 	private BoxCollider2D groundCollider;
-	private bool hasJumped = false;
+	private Camera mainCamera;
+	# endregion
 
 	// Start is called before the first frame update
 	void Start()
     {
+		// get a reference to the Rigidbody component
         rb = GetComponent<Rigidbody2D>();
 		if (rb == null)
 			Debug.LogError("Rigidbody component not found on the player object");
@@ -36,6 +50,8 @@ public class PlayerController : MonoBehaviour
 		groundCollider = transform.Find("Square").gameObject.GetComponent<BoxCollider2D>();
 		if (groundCollider == null)
 			Debug.LogError("Ground collider not found on the player object");
+		// get a reference to the main camera
+		mainCamera = Camera.main;
     }
 
     // Update is called once per frame
@@ -100,6 +116,8 @@ public class PlayerController : MonoBehaviour
 		isActive = true;
 		// Make the 'active character pointer' visible
 		transform.Find("Pointer").gameObject.GetComponent<SpriteRenderer>().enabled = true;
+		// Set the camera target to the active character
+		mainCamera.GetComponent<CameraController>().SetTarget(gameObject);
 	}
 
 	public void SetNotActive()
@@ -143,16 +161,11 @@ public class PlayerController : MonoBehaviour
 	{
 		// Read movement input
 		float movementInput = Input.GetAxisRaw("Horizontal");
+		float targetSpeed = movementSpeed * movementInput;
 		
 		// Move the player
-		// Vector3 movementVector = new Vector3(movementInput, rb.velocity.y, 0);
-		// rb.velocity.Set(movementInput * movementSpeed, rb.velocity.y);
-		// rb.MovePosition(transform.position + movementVector * movementSpeed * Time.deltaTime);
-
-		// transform.Translate(movementInput * movementSpeed * Time.fixedDeltaTime, 0, 0, Space.World);
-
-		float speedDifference = movementSpeed * movementInput - rb.velocity.x;
-		float acceleration = speedDifference * movementAcceleration;
+		float speedDifference = targetSpeed - rb.velocity.x;
+		float acceleration = Math.Abs(targetSpeed) > 0.01f ? speedDifference * movementAcceleration : speedDifference * movementDeceleration;
 		rb.AddForce(acceleration * Vector2.right, 0);
 	}
 
