@@ -13,7 +13,7 @@ public enum ActivationKey
 
 public class PlayerController : MonoBehaviour
 {
-	// Public variables
+	////////// Attributes
 	# region movement
 	[SerializeField] private float movementSpeed = 10.0f;
 	[SerializeField] private float movementAcceleration = 10.0f;
@@ -26,7 +26,6 @@ public class PlayerController : MonoBehaviour
 	[SerializeField] private ActivationKey activationKey = ActivationKey.Fire1;
 	# endregion
 
-	// Private variables
 	# region state
 	[SerializeField] private bool isActive = false;
 	[SerializeField] private bool isGrounded = false;
@@ -38,6 +37,8 @@ public class PlayerController : MonoBehaviour
 	private BoxCollider2D groundCollider;
 	private Camera mainCamera;
 	# endregion
+
+	////////// Methods
 
 	// Start is called before the first frame update
 	void Start()
