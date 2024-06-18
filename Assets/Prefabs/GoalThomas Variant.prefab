@@ -1,0 +1,87 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &64035824068102743
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 206314443000880113, guid: d0cdc10cea607432696c68b58af8fb6c, type: 3}
+      propertyPath: m_Name
+      value: GoalThomas Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 3150310106427959849, guid: d0cdc10cea607432696c68b58af8fb6c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 32.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3150310106427959849, guid: d0cdc10cea607432696c68b58af8fb6c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -8.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3150310106427959849, guid: d0cdc10cea607432696c68b58af8fb6c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3150310106427959849, guid: d0cdc10cea607432696c68b58af8fb6c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3150310106427959849, guid: d0cdc10cea607432696c68b58af8fb6c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3150310106427959849, guid: d0cdc10cea607432696c68b58af8fb6c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3150310106427959849, guid: d0cdc10cea607432696c68b58af8fb6c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3150310106427959849, guid: d0cdc10cea607432696c68b58af8fb6c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3150310106427959849, guid: d0cdc10cea607432696c68b58af8fb6c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3150310106427959849, guid: d0cdc10cea607432696c68b58af8fb6c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3206836897481832792, guid: d0cdc10cea607432696c68b58af8fb6c, type: 3}
+      propertyPath: m_Size.x
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3206836897481832792, guid: d0cdc10cea607432696c68b58af8fb6c, type: 3}
+      propertyPath: m_Size.y
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6257869177786291878, guid: d0cdc10cea607432696c68b58af8fb6c, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6257869177786291878, guid: d0cdc10cea607432696c68b58af8fb6c, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8421928504310851245, guid: d0cdc10cea607432696c68b58af8fb6c, type: 3}
+      propertyPath: characterName
+      value: Thomas
+      objectReference: {fileID: 0}
+    - target: {fileID: 8860497475594348543, guid: d0cdc10cea607432696c68b58af8fb6c, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8860497475594348543, guid: d0cdc10cea607432696c68b58af8fb6c, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.65
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d0cdc10cea607432696c68b58af8fb6c, type: 3}
