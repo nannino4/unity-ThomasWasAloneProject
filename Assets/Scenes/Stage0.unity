@@ -669,6 +669,14 @@ PrefabInstance:
       value: Main Camera
       objectReference: {fileID: 0}
     - target: {fileID: 5453135975203033571, guid: 736b9bc4165034b6c81ccb4292260c0e, type: 3}
+      propertyPath: smoothTime
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5453135975203033571, guid: 736b9bc4165034b6c81ccb4292260c0e, type: 3}
+      propertyPath: maxVelocity
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 5453135975203033571, guid: 736b9bc4165034b6c81ccb4292260c0e, type: 3}
       propertyPath: players.Array.data[0]
       value: 
       objectReference: {fileID: 926451070}
@@ -1084,7 +1092,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6296553691562821094, guid: 9f8e334f558604130aaccc1f455e691a, type: 3}
       propertyPath: m_TagString
-      value: Player
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 7282568046563535256, guid: 9f8e334f558604130aaccc1f455e691a, type: 3}
       propertyPath: m_CallbackLayers.m_Bits
@@ -2166,11 +2174,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5250997240382300362, guid: 4297551ab25b84905b33a7ea86712f1e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9
+      value: 46.5
       objectReference: {fileID: 0}
     - target: {fileID: 5250997240382300362, guid: 4297551ab25b84905b33a7ea86712f1e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 19
+      value: 4.25
       objectReference: {fileID: 0}
     - target: {fileID: 5250997240382300362, guid: 4297551ab25b84905b33a7ea86712f1e, type: 3}
       propertyPath: m_LocalPosition.z

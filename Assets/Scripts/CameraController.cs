@@ -13,8 +13,8 @@ public class CameraController : MonoBehaviour
 	# region camera movement
 	private Vector3 targetPosition;
 	[SerializeField] private float zOffset = -10f;
-	[SerializeField] private float smoothTime = 1f;
-	[SerializeField] private float maxVelocity = 1f;
+	[SerializeField] private float smoothTime = 0.4f;
+	[SerializeField] private float maxVelocity = 40f;
 	private Vector3 currentVelocity;
 	# endregion
 
