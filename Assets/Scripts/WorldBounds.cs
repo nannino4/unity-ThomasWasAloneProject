@@ -6,7 +6,6 @@ using UnityEngine.Events;
 public class WorldBound : MonoBehaviour
 {
 	private LevelScript levelScript;
-	[SerializeField] private UnityEvent onPlayerExit;
 
 	// Start is called before the first frame update
 	void Start()

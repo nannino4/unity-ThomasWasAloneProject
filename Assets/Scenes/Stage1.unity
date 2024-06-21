@@ -1070,6 +1070,14 @@ PrefabInstance:
       value: Main Camera
       objectReference: {fileID: 0}
     - target: {fileID: 5453135975203033571, guid: 736b9bc4165034b6c81ccb4292260c0e, type: 3}
+      propertyPath: smoothTime
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5453135975203033571, guid: 736b9bc4165034b6c81ccb4292260c0e, type: 3}
+      propertyPath: maxVelocity
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 5453135975203033571, guid: 736b9bc4165034b6c81ccb4292260c0e, type: 3}
       propertyPath: players.Array.data[0]
       value: 
       objectReference: {fileID: 1541913872}

@@ -46,7 +46,7 @@ public class LevelScript : MonoBehaviour
 		UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
 	}
 
-	public void LoadNextLevel()
+	void LoadNextLevel()
 	{
 		//TODO
 		Debug.Log("Loading next level");

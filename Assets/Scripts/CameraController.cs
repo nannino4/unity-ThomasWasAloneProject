@@ -4,19 +4,34 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-	// Public variables
+	////////// attributes
+
+	# region references
 	public GameObject target;
+	# endregion
+
+	# region camera movement
+	private Vector3 targetPosition;
+	[SerializeField] private float zOffset = -10f;
+	[SerializeField] private float smoothTime = 1f;
+	[SerializeField] private float maxVelocity = 1f;
+	private Vector3 currentVelocity;
+	# endregion
+
+	////////// methods
 
     // Start is called before the first frame update
     void Start()
     {}
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
 		if (target != null)
 		{
-			transform.position = new Vector3(target.transform.position.x, target.transform.position.y, transform.position.z);
+			targetPosition = target.transform.position;
+			targetPosition.z = zOffset;
+			transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref currentVelocity, smoothTime, maxVelocity);
 		}
     }
 
