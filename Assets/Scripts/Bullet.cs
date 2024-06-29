@@ -32,7 +32,7 @@ public class Bullet : MonoBehaviour
     {
         lifeTime += Time.deltaTime;
 		if (lifeTime >= maxLifeTime)
-			Destroy(gameObject);
+			Destroy(transform.parent.gameObject);
     }
 
 	void OnCollisionEnter2D(Collision2D other)
@@ -42,7 +42,7 @@ public class Bullet : MonoBehaviour
 			Debug.Log("Player hit by bullet! GAME OVER!");
 			levelScript.ResetLevel();
 		}
-		Destroy(gameObject);
+		Destroy(transform.parent.gameObject);
 	}
 
 	# region bullet type
