@@ -104,6 +104,7 @@ public class LevelScript : MonoBehaviour
 		return true;
 	}
 
+	# region scene management
 	public void ResetLevel()
 	{
 		Debug.Log("Resetting level");
@@ -116,4 +117,12 @@ public class LevelScript : MonoBehaviour
 		Debug.Log("Loading next level");
 		// UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex + 1);
 	}
+	# endregion
+
+	public PlayerController[] GetCharacters()
+	{
+		return characters;
+	}
+
 }
+

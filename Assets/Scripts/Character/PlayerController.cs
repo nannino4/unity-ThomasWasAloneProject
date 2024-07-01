@@ -161,4 +161,10 @@ public class PlayerController : MonoBehaviour
 		rb.AddForce(-rb.velocity.x * movementAcceleration * Vector2.right, 0);
 	}
 # endregion
+
+	public Color GetColor()
+	{
+		return transform.Find("Square").GetComponent<SpriteRenderer>().color;
+	}
+
 }
