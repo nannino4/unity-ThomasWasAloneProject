@@ -157,6 +157,7 @@ public class Turret : MonoBehaviour
 		GameObject bullet = Instantiate(bulletPrefab, transform.position + transform.up * bulletStartRange, transform.rotation);
 		// Set the bullet type
 		bullet.transform.Find("Sprite").GetComponent<Bullet>().setBulletType(turretType);
+		bullet.transform.Find("Sprite").GetComponent<SpriteRenderer>().color = transform.Find("Sprite").GetComponent<SpriteRenderer>().color;
 
 		// Add initial impulse to the bullet
 		if (bullet.GetComponent<Rigidbody2D>() != null)
